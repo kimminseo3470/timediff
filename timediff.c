@@ -15,17 +15,31 @@ int main(void) {
 	int result;
 	time time1, time2;
 
-	printf("Enter date1[1~30], hour1[0~23], minute1[0~59]: ");
-	scanf("%d %d %d", &d, &h, &m);
-	time1.date = d;
-	time1.hour = h;
-	time1.minute = m;
+	while (1) {
+		printf("Enter date1[1~30], hour1[0~23], minute1[0~59]: ");
+		scanf("%d %d %d", &d, &h, &m);
+		if (d < 1 || d>30 || h < 0 || h>23 || m < 0 || m>59)
+			printf("Time error\n");
+		else {
+			time1.date = d;
+			time1.hour = h;
+			time1.minute = m;
+			break;
+		}
+	}
 
-	printf("Enter date2[1~30], hour2[0~23], minute2[0~59]: ");
-	scanf("%d %d %d", &d, &h, &m);
+	while (1) {
+		printf("Enter date2[1~30], hour2[0~23], minute2[0~59]: ");
+		scanf("%d %d %d", &d, &h, &m);
+		if (d < 1 || d>30 || h < 0 || h>23 || m < 0 || m>59)
+			printf("Time error\n");
+		else {
+			time2.date = d;
+			time2.hour = h;
+			time2.minute = m;
+			break;
+		}
+	}
 
-	time2.date = d;
-	time2.hour = h;
-	time2.minute = m;
 	return 0;
 }
