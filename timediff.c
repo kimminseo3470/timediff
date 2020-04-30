@@ -41,5 +41,12 @@ int main(void) {
 		}
 	}
 
+
+	total1 = time1.date * 1440 + time1.hour * 60 + time1.minute;
+	total2 = time2.date * 1440 + time2.hour * 60 + time2.minute;
+	result = abs(total1 - total2);
+	printf("Difference between two times in miutes: %d minutes", result);
+
+
 	return 0;
 }
